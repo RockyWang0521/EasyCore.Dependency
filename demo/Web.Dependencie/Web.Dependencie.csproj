@@ -11,9 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="DependencieTest\Servers\" />
-    <Folder Include="DependencieTest\interfaces\" />
+    <ProjectReference Include="..\..\src\EasyCore.Dependencie\EasyCore.Dependencie.csproj" />
   </ItemGroup>
 
 </Project>

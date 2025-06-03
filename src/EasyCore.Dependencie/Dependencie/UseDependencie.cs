@@ -18,7 +18,7 @@ namespace EasyCore.Dependencie
 
             var transientType = typeof(ITransientDependencie);
 
-            var scopedType = typeof(IScopedDependencie);
+            var scopedType = typeof(ISingletonDependencie);
 
             foreach (var dll in dllFiles)
             {

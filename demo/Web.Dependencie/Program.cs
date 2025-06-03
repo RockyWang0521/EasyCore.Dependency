@@ -1,3 +1,4 @@
+using EasyCore.Dependencie;
 
 namespace Web.Dependencie
 {
@@ -13,6 +14,7 @@ namespace Web.Dependencie
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.UseEasyCoreDependencie();
 
             var app = builder.Build();
 
