@@ -6,7 +6,7 @@ namespace EasyCore.Dependencie
 {
     public static class UseDependencie
     {
-        public static void UseEasyCoreDependencie(this IServiceCollection service)
+        public static void EasyCoreDependencie(this IServiceCollection service)
         {
             var rootDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
