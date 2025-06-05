@@ -19,7 +19,7 @@
           builder.Services.AddSwaggerGen();
 
           // Use EasyCoreDependencie
-          builder.Services.UseEasyCoreDependencie();
+          builder.Services.EasyCoreDependencie();
 
           var app = builder.Build();
 
