@@ -8,13 +8,12 @@ namespace Web.Dependencie
         {
             var builder = WebApplication.CreateBuilder(args);
 
-
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
             // Use EasyCoreDependencie
-            builder.Services.UseEasyCoreDependencie();
+            builder.Services.EasyCoreDependencie();
 
             var app = builder.Build();
 
