@@ -88,5 +88,35 @@
        }
    }
 ```
+2.3 类直接继承接口
+
+```
+    public class ScopedNotAbstractionTest : IScopedDependencie
+    {
+        public string Test()
+        {
+            return "This is a ScopedNotAbstraction Test";
+        }
+    }
+
+    public class SingletonNotAbstractionTest : ISingletonDependencie
+    {
+        public string Test()
+        {
+            return "This is a SingletonNotAbstraction test";
+        }
+    }
+
+    public class TransientNotAbstractionTest : ITransientDependencie
+    {
+        public string Test()
+        {
+            return "This is a TransientNotAbstraction test";
+        }
+    }
+
+```
+
+
 就可以自动实现抽象与细节之间的依赖关系注入。
 
