@@ -1,6 +1,8 @@
-﻿namespace Web.Dependencie.DependencieTest.Servers
+﻿using EasyCore.Dependencie;
+
+namespace Web.Dependencie.DependencieTest.Servers
 {
-    public class SingletonNotAbstractionTest
+    public class SingletonNotAbstractionTest : ISingletonDependencie
     {
         public string Test()
         {

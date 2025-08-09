@@ -1,6 +1,8 @@
-﻿namespace Web.Dependencie.DependencieTest.Servers
+﻿using EasyCore.Dependencie;
+
+namespace Web.Dependencie.DependencieTest.Servers
 {
-    public class ScopedNotAbstractionTest
+    public class ScopedNotAbstractionTest : IScopedDependencie
     {
         public string Test()
         {
