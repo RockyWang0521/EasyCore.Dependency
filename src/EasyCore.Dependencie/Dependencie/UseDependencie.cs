@@ -34,14 +34,16 @@ namespace EasyCore.Dependencie
 
                     foreach (var type in types)
                     {
-                        var Interface = type.GetInterfaces().Where(type => baseType.IsAssignableFrom(type)).FirstOrDefault();
+                        var Interface = type.GetInterfaces()
+                            .Where(type => baseType.IsAssignableFrom(type) &&
+                            type != singletonType && type != transientType &&
+                            type != scopedType && type != baseType)
+                            .FirstOrDefault();
 
-                        if (Interface is null) continue;
-
-                        var Ioctype = type.GetInterfaces().Where(i => i == singletonType || i == transientType || i == scopedType).FirstOrDefault();
-
-                        if (Ioctype is not null)
+                        if (Interface is not null)
                         {
+                            var Ioctype = type.GetInterfaces().Where(i => i == singletonType || i == transientType || i == scopedType).FirstOrDefault();
+
                             if (Ioctype == singletonType) service.AddSingleton(Interface, type);
 
                             if (Ioctype == transientType) service.AddTransient(Interface, type);
@@ -52,6 +54,8 @@ namespace EasyCore.Dependencie
                         }
                         else
                         {
+                            var Ioctype = type.GetInterfaces().Where(i => i == singletonType || i == transientType || i == scopedType).FirstOrDefault();
+
                             if (Ioctype == singletonType) service.AddSingleton(type);
 
                             if (Ioctype == transientType) service.AddTransient(type);
