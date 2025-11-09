@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>EasyCore.Dependency</PackageId>
+    <PackageIcon>EasyCoreLogo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <IncludeSymbols>False</IncludeSymbols>
+    <RepositoryType>gitee</RepositoryType>
+    <Authors>WZHY</Authors>
+    <Description>EasyCore automatic dependency injection for .NET based on marker interfaces.</Description>
+    <PackageProjectUrl>https://gitee.com/wzhy-0521/easy-core.-dependencie.git</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <AssemblyVersion>8.0.0.0</AssemblyVersion>
+    <FileVersion>8.0.0.0</FileVersion>
+    <Version>8.0.0</Version>
+    <OutputType>Library</OutputType>
+    <RootNamespace>EasyCore.Dependency</RootNamespace>
+    <AssemblyName>EasyCore.Dependency</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\png\EasyCoreLogo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>
