@@ -18,25 +18,25 @@ namespace EasyCore.Dependency
         /// <summary>
         /// Scans default assemblies and registers types that implement EasyCore dependency markers.
         /// </summary>
-        public static IServiceCollection EasyCoreDependency(this IServiceCollection services)
+        public static IServiceCollection AddEasyCoreDependency(this IServiceCollection services)
         {
-            return services.EasyCoreDependency(_ => { });
+            return services.AddEasyCoreDependency(_ => { });
         }
 
         /// <summary>
         /// Scans the specified assemblies and registers marked dependency types.
         /// </summary>
-        public static IServiceCollection EasyCoreDependency(
+        public static IServiceCollection AddEasyCoreDependency(
             this IServiceCollection services,
             params Assembly[] assemblies)
         {
-            return services.EasyCoreDependency(options => options.AddAssemblies(assemblies));
+            return services.AddEasyCoreDependency(options => options.AddAssemblies(assemblies));
         }
 
         /// <summary>
         /// Scans assemblies according to <paramref name="configure"/> and registers marked dependency types.
         /// </summary>
-        public static IServiceCollection EasyCoreDependency(
+        public static IServiceCollection AddEasyCoreDependency(
             this IServiceCollection services,
             Action<DependencyRegistrationOptions> configure)
         {

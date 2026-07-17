@@ -11,7 +11,7 @@ namespace EasyCore.Dependency.Tests
         public void EasyCoreDependency_RegistersInterfaceAndConcreteServices()
         {
             var services = new ServiceCollection();
-            services.EasyCoreDependency(typeof(ScopedSample).Assembly);
+            services.AddEasyCoreDependency(typeof(ScopedSample).Assembly);
 
             using var provider = services.BuildServiceProvider();
 
@@ -25,7 +25,7 @@ namespace EasyCore.Dependency.Tests
         public void EasyCoreDependency_RegistersAllBusinessInterfaces()
         {
             var services = new ServiceCollection();
-            services.EasyCoreDependency(typeof(MultiInterfaceSample).Assembly);
+            services.AddEasyCoreDependency(typeof(MultiInterfaceSample).Assembly);
 
             using var provider = services.BuildServiceProvider();
 
@@ -40,7 +40,7 @@ namespace EasyCore.Dependency.Tests
         public void Singleton_ReturnsSameInstance_AcrossScopes()
         {
             var services = new ServiceCollection();
-            services.EasyCoreDependency(typeof(SingletonSample).Assembly);
+            services.AddEasyCoreDependency(typeof(SingletonSample).Assembly);
 
             using var provider = services.BuildServiceProvider();
             using var scope1 = provider.CreateScope();
@@ -56,7 +56,7 @@ namespace EasyCore.Dependency.Tests
         public void Scoped_ReturnsSameInstance_WithinScope_AndDifferentAcrossScopes()
         {
             var services = new ServiceCollection();
-            services.EasyCoreDependency(typeof(ScopedSample).Assembly);
+            services.AddEasyCoreDependency(typeof(ScopedSample).Assembly);
 
             using var provider = services.BuildServiceProvider();
             using var scope1 = provider.CreateScope();
@@ -74,7 +74,7 @@ namespace EasyCore.Dependency.Tests
         public void Transient_ReturnsDifferentInstances()
         {
             var services = new ServiceCollection();
-            services.EasyCoreDependency(typeof(TransientSample).Assembly);
+            services.AddEasyCoreDependency(typeof(TransientSample).Assembly);
 
             using var provider = services.BuildServiceProvider();
 
@@ -90,8 +90,8 @@ namespace EasyCore.Dependency.Tests
             var services = new ServiceCollection();
             var assembly = typeof(ScopedSample).Assembly;
 
-            services.EasyCoreDependency(assembly);
-            services.EasyCoreDependency(assembly);
+            services.AddEasyCoreDependency(assembly);
+            services.AddEasyCoreDependency(assembly);
 
             using var provider = services.BuildServiceProvider();
             Assert.NotNull(provider.GetRequiredService<IScopedSample>());
@@ -101,7 +101,7 @@ namespace EasyCore.Dependency.Tests
         public void AbstractTypes_AreNotRegistered()
         {
             var services = new ServiceCollection();
-            services.EasyCoreDependency(typeof(AbstractSample).Assembly);
+            services.AddEasyCoreDependency(typeof(AbstractSample).Assembly);
 
             Assert.DoesNotContain(services, descriptor => descriptor.ServiceType == typeof(AbstractSample));
             Assert.DoesNotContain(services, descriptor => descriptor.ImplementationType == typeof(AbstractSample));
@@ -111,7 +111,7 @@ namespace EasyCore.Dependency.Tests
         public void AssemblyPrefixFilter_LimitsRegistration()
         {
             var services = new ServiceCollection();
-            services.EasyCoreDependency(options =>
+            services.AddEasyCoreDependency(options =>
             {
                 options.AddAssemblies(typeof(ScopedSample).Assembly);
                 options.AssemblyNamePrefixes.Add("DoesNotMatchAnything");
