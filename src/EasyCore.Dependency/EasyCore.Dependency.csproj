@@ -19,7 +19,7 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <AssemblyVersion>8.0.0.0</AssemblyVersion>
     <FileVersion>8.0.0.0</FileVersion>
-    <Version>8.0.0</Version>
+    <Version>8.0.1</Version>
     <OutputType>Library</OutputType>
     <RootNamespace>EasyCore.Dependency</RootNamespace>
     <AssemblyName>EasyCore.Dependency</AssemblyName>
