@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="480" viewBox="0 0 980 480">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1419"/>
+      <stop offset="100%" stop-color="#1a2332"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="980" height="480" rx="16" fill="url(#bg)"/>
+  <text x="40" y="42" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="20" font-weight="700">EasyCore.Dependency Architecture</text>
+  <text x="40" y="66" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="13">Marker interfaces · Assembly scan · TryAdd registration · Microsoft.Extensions.DI</text>
+
+  <rect x="40" y="100" width="170" height="110" rx="12" fill="#243044" stroke="#3d9cf0" stroke-width="2" filter="url(#shadow)"/>
+  <text x="125" y="140" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="14" font-weight="700">Host App</text>
+  <text x="125" y="162" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">ASP.NET Core / Console</text>
+  <text x="125" y="184" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="11">Program.cs</text>
+
+  <rect x="250" y="90" width="300" height="130" rx="12" fill="#243044" stroke="#3ecf8e" stroke-width="2" filter="url(#shadow)"/>
+  <text x="400" y="122" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="14" font-weight="700">EasyCore.Dependency</text>
+  <text x="400" y="148" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">AddEasyCoreDependency</text>
+  <text x="400" y="170" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Scan assemblies · Resolve lifetime</text>
+  <text x="400" y="192" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Interface / Concrete / Forward</text>
+
+  <rect x="590" y="100" width="170" height="110" rx="12" fill="#243044" stroke="#f0b429" stroke-width="2" filter="url(#shadow)"/>
+  <text x="675" y="140" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="14" font-weight="700">IServiceCollection</text>
+  <text x="675" y="162" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">TryAdd / Describe</text>
+  <text x="675" y="184" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="11">Scoped / Singleton / Transient</text>
+
+  <rect x="800" y="100" width="140" height="110" rx="12" fill="#243044" stroke="#3d9cf0" stroke-width="2" filter="url(#shadow)"/>
+  <text x="870" y="140" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="14" font-weight="700">Consumers</text>
+  <text x="870" y="162" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Controller / Service</text>
+  <text x="870" y="184" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="11">Ctor injection</text>
+
+  <path d="M210 155 H250" stroke="#3d9cf0" stroke-width="2"/>
+  <path d="M550 155 H590" stroke="#f0b429" stroke-width="2"/>
+  <path d="M760 155 H800" stroke="#3d9cf0" stroke-width="2"/>
+
+  <text x="40" y="270" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="13">Lifetime marker interfaces</text>
+  <rect x="40" y="290" width="280" height="70" rx="10" fill="#1a2332" stroke="#3ecf8e"/>
+  <text x="180" y="320" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="13" font-weight="700">IScopedDependency</text>
+  <text x="180" y="342" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="11">Scoped · one per request/scope</text>
+
+  <rect x="350" y="290" width="280" height="70" rx="10" fill="#1a2332" stroke="#f0b429"/>
+  <text x="490" y="320" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="13" font-weight="700">ISingletonDependency</text>
+  <text x="490" y="342" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="11">Singleton · one per process</text>
+
+  <rect x="660" y="290" width="280" height="70" rx="10" fill="#1a2332" stroke="#3d9cf0"/>
+  <text x="800" y="320" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="13" font-weight="700">ITransientDependency</text>
+  <text x="800" y="342" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="11">Transient · new each resolve</text>
+
+  <text x="40" y="410" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Business interface inherits marker ’ impl only business interface (preferred) \ Concrete class implements marker ’ register as self</text>
+  <text x="40" y="438" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Multiple business interfaces: register concrete once, forward each interface to the same instance · TryAdd, safe to call repeatedly</text>
+</svg>

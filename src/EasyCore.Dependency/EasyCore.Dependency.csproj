@@ -9,10 +9,12 @@
     <PackageIcon>EasyCoreLogo.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <IncludeSymbols>False</IncludeSymbols>
-    <RepositoryType>gitee</RepositoryType>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/RockyWang0521/EasyCore.Dependency</RepositoryUrl>
     <Authors>WZHY</Authors>
     <Description>EasyCore automatic dependency injection for .NET based on marker interfaces.</Description>
-    <PackageProjectUrl>https://gitee.com/wzhy-0521/easy-core.-dependencie.git</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/RockyWang0521/EasyCore.Dependency</PackageProjectUrl>
+    <PackageTags>dependency-injection;di;ioc;marker;scoped;singleton;transient</PackageTags>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <AssemblyVersion>8.0.0.0</AssemblyVersion>

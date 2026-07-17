@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="420" viewBox="0 0 980 420">
+  <rect width="980" height="420" rx="16" fill="#0f1419"/>
+  <text x="40" y="40" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="18" font-weight="700">Registration Flow  Scan · Resolve · TryAdd</text>
+
+  <rect x="30" y="80" width="160" height="78" rx="10" fill="#243044" stroke="#3d9cf0"/>
+  <text x="110" y="112" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="13" font-weight="700">1. Resolve asms</text>
+  <text x="110" y="134" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="11">Assemblies / prefixes</text>
+
+  <rect x="215" y="80" width="160" height="78" rx="10" fill="#243044" stroke="#3d9cf0"/>
+  <text x="295" y="112" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="13" font-weight="700">2. Find types</text>
+  <text x="295" y="134" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="11">IBaseDependency</text>
+
+  <rect x="400" y="80" width="160" height="78" rx="10" fill="#243044" stroke="#3ecf8e"/>
+  <text x="480" y="112" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="13" font-weight="700">3. Lifetime</text>
+  <text x="480" y="134" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="11">Exactly one marker</text>
+
+  <rect x="585" y="80" width="160" height="78" rx="10" fill="#243044" stroke="#f0b429"/>
+  <text x="665" y="112" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="13" font-weight="700">4. Business ifaces</text>
+  <text x="665" y="134" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="11">0 / 1 / many</text>
+
+  <rect x="770" y="80" width="170" height="78" rx="10" fill="#243044" stroke="#3ecf8e"/>
+  <text x="855" y="112" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="13" font-weight="700">5. TryAdd</text>
+  <text x="855" y="134" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="11">Register or forward</text>
+
+  <path d="M190 119 H215" stroke="#8fa3bc" stroke-width="2"/>
+  <path d="M375 119 H400" stroke="#8fa3bc" stroke-width="2"/>
+  <path d="M560 119 H585" stroke="#8fa3bc" stroke-width="2"/>
+  <path d="M745 119 H770" stroke="#8fa3bc" stroke-width="2"/>
+
+  <rect x="40" y="200" width="280" height="100" rx="12" fill="#1a2332" stroke="#2f3f55"/>
+  <text x="180" y="235" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="13" font-weight="700">No business interface</text>
+  <text x="180" y="260" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Register concrete as self</text>
+  <text x="180" y="282" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="11">CacheHelper ’ CacheHelper</text>
+
+  <rect x="350" y="200" width="280" height="100" rx="12" fill="#1a2332" stroke="#2f3f55"/>
+  <text x="490" y="235" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="13" font-weight="700">One business interface</text>
+  <text x="490" y="260" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Interface ’ implementation</text>
+  <text x="490" y="282" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="11">IUserService ’ UserService</text>
+
+  <rect x="660" y="200" width="280" height="100" rx="12" fill="#1a2332" stroke="#2f3f55"/>
+  <text x="800" y="235" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="13" font-weight="700">Multiple business ifaces</text>
+  <text x="800" y="260" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Concrete + interface forward</text>
+  <text x="800" y="282" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="11">Same instance · Assert.Same</text>
+
+  <text x="40" y="350" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Default scan: entry assembly + loaded non-System./Microsoft. assemblies</text>
+  <text x="40" y="378" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Filter: AssemblyNamePrefixes (e.g. MyApp) · skip dynamic/framework · no directory LoadFrom</text>
+</svg>
