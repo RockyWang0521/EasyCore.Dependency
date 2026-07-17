@@ -11,7 +11,7 @@
   <rect x="60" y="110" width="220" height="130" rx="12" fill="#243044" stroke="#3ecf8e" stroke-width="2"/>
   <text x="170" y="155" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="15" font-weight="700">EasyCore.Dependency</text>
   <text x="170" y="180" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">NuGet / project reference</text>
-  <text x="170" y="202" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">AddEasyCoreDependency()</text>
+  <text x="170" y="202" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">EasyCoreDependency()</text>
   <rect x="360" y="100" width="260" height="150" rx="12" fill="#243044" stroke="#3d9cf0" stroke-width="2"/>
   <text x="490" y="140" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="15" font-weight="700">demo/Web.Dependency</text>
   <text x="490" y="168" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Interfaces: Scoped / Singleton / Transient</text>

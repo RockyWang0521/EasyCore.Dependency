@@ -13,7 +13,7 @@ namespace Web.Dependency
             builder.Services.AddSwaggerGen();
 
             // Register EasyCore.Dependency
-            builder.Services.AddEasyCoreDependency();
+            builder.Services.EasyCoreDependency();
 
             var app = builder.Build();
 

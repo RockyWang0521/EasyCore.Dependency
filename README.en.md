@@ -64,7 +64,7 @@ EasyCore.Dependency reduces DI boilerplate in ASP.NET Core and generic hosts:
 
 | Principle | Meaning |
 |---|---|
-| **Low friction** | One call: `AddEasyCoreDependency()` |
+| **Low friction** | One call: `EasyCoreDependency()` |
 | **Convention over config** | Markers declare lifetime and registration intent |
 | **Safe defaults** | `TryAdd`; skip `System.` / `Microsoft.` assemblies |
 | **Controllable scan** | Explicit assemblies or `AssemblyNamePrefixes` |
@@ -105,7 +105,7 @@ EasyCore.Dependency/
 [Program.cs]
       │
       ▼
-AddEasyCoreDependency(options?)
+EasyCoreDependency(options?)
       │
       ├─ ResolveAssemblies
       │     · Explicit Assemblies, or
@@ -144,7 +144,7 @@ Repository: [github.com/RockyWang0521/EasyCore.Dependency](https://github.com/Ro
 | Scoped | One per scope | `IScopedDependency` |
 | Singleton | One per process | `ISingletonDependency` |
 | Transient | New each resolve | `ITransientDependency` |
-| Interface → impl | Business interface inherits marker | `AddEasyCoreDependency` |
+| Interface → impl | Business interface inherits marker | `EasyCoreDependency` |
 | Concrete self | Type implements marker directly | Same |
 | Multi-iface same instance | Forward to one concrete | Automatic |
 | Explicit assemblies | `params Assembly[]` | Overload |
@@ -155,7 +155,7 @@ Repository: [github.com/RockyWang0521/EasyCore.Dependency](https://github.com/Ro
 
 ```text
 Need auto DI?
-└── AddEasyCoreDependency()
+└── EasyCoreDependency()
 
 How to expose the service?
 ├── Preferred: business iface : IScopedDependency (etc.) → impl only business iface
@@ -164,7 +164,7 @@ How to expose the service?
 
 Scan scope?
 ├── Default: entry + loaded app assemblies
-├── Precise: AddEasyCoreDependency(typeof(X).Assembly)
+├── Precise: EasyCoreDependency(typeof(X).Assembly)
 └── Filter: options.AssemblyNamePrefixes.Add("MyApp")
 ```
 
@@ -228,7 +228,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 // Scan entry assembly + loaded non-framework assemblies
-builder.Services.AddEasyCoreDependency();
+builder.Services.EasyCoreDependency();
 
 var app = builder.Build();
 app.MapControllers();
@@ -253,9 +253,9 @@ Open the demo Swagger UI to verify injection.
 
 | Method | Description |
 |---|---|
-| `AddEasyCoreDependency()` | Default scan strategy |
-| `AddEasyCoreDependency(params Assembly[])` | Scan only these assemblies |
-| `AddEasyCoreDependency(Action<DependencyRegistrationOptions>)` | Full options |
+| `EasyCoreDependency()` | Default scan strategy |
+| `EasyCoreDependency(params Assembly[])` | Scan only these assemblies |
+| `EasyCoreDependency(Action<DependencyRegistrationOptions>)` | Full options |
 
 ### 8.2 `DependencyRegistrationOptions`
 
@@ -266,7 +266,7 @@ Open the demo Swagger UI to verify injection.
 | `AddAssemblies(...)` | Fluent append |
 
 ```csharp
-builder.Services.AddEasyCoreDependency(options =>
+builder.Services.EasyCoreDependency(options =>
 {
     options.AddAssemblies(typeof(Program).Assembly);
     options.AssemblyNamePrefixes.Add("MyApp");
@@ -344,8 +344,8 @@ Internally: register `OrderService` once, then forward `IOrderReader` / `IOrderW
 
 | Scenario | Usage |
 |---|---|
-| Default | `AddEasyCoreDependency()` |
-| Explicit | `AddEasyCoreDependency(typeof(Program).Assembly)` |
+| Default | `EasyCoreDependency()` |
+| Explicit | `EasyCoreDependency(typeof(Program).Assembly)` |
 | Prefix filter | `options.AssemblyNamePrefixes.Add("MyApp")` |
 
 **Excluded by default**: `System.` / `Microsoft.` / `mscorlib` / `netstandard` and dynamic assemblies.
@@ -391,13 +391,14 @@ From **8.0.0**, package and API spelling is corrected (Dependencie → Dependenc
 |---|---|
 | `EasyCore.Dependencie` | `EasyCore.Dependency` |
 | `IScopedDependencie` etc. | `IScopedDependency` etc. |
-| `services.EasyCoreDependencie()` | `services.AddEasyCoreDependency()` |
+| `services.EasyCoreDependencie()` | `services.EasyCoreDependency()` |
+| `services.AddEasyCoreDependency()` | `services.EasyCoreDependency()` |
 
 Upgrade steps:
 
 1. Update the NuGet package to `EasyCore.Dependency`
 2. Replace namespaces and interface names globally
-3. Switch the extension method to `AddEasyCoreDependency`
+3. Switch the extension method to `EasyCoreDependency`
 
 ---
 

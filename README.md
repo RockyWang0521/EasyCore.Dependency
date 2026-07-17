@@ -64,7 +64,7 @@ EasyCore.Dependency 解决「在 ASP.NET Core / 通用宿主里少写样板 DI �
 
 | 原则 | 说明 |
 |---|---|
-| **低摩擦接入** | 一行 `AddEasyCoreDependency()` 即可 |
+| **低摩擦接入** | 一行 `EasyCoreDependency()` 即可 |
 | **约定优于配置** | 标记接口即声明生命周期与注册意图 |
 | **安全默认** | `TryAdd`、排除 `System.` / `Microsoft.` 程序集 |
 | **可控扫描** | 显式程序集或 `AssemblyNamePrefixes` |
@@ -105,7 +105,7 @@ EasyCore.Dependency/
 [Program.cs]
       │
       ▼
-AddEasyCoreDependency(options?)
+EasyCoreDependency(options?)
       │
       ├─ ResolveAssemblies
       │     · 显式 Assemblies，或
@@ -144,7 +144,7 @@ AddEasyCoreDependency(options?)
 | Scoped 注册 | 作用域内单例 | `IScopedDependency` |
 | Singleton 注册 | 进程内单例 | `ISingletonDependency` |
 | Transient 注册 | 每次解析新建 | `ITransientDependency` |
-| 接口 → 实现 | 业务接口继承标记 | `AddEasyCoreDependency` |
+| 接口 → 实现 | 业务接口继承标记 | `EasyCoreDependency` |
 | 具体类型注册 | 实现类直接实现标记 | 同上 |
 | 多接口同实例 | 转发到同一实现 | 自动 |
 | 显式程序集 | `params Assembly[]` | 重载 |
@@ -155,7 +155,7 @@ AddEasyCoreDependency(options?)
 
 ```text
 需要自动 DI？
-└── AddEasyCoreDependency()
+└── EasyCoreDependency()
 
 服务如何暴露？
 ├── 推荐：业务接口 : IScopedDependency（等）→ 实现类只实现业务接口
@@ -164,7 +164,7 @@ AddEasyCoreDependency(options?)
 
 扫描范围？
 ├── 默认：入口 + 已加载业务程序集
-├── 精确：AddEasyCoreDependency(typeof(X).Assembly)
+├── 精确：EasyCoreDependency(typeof(X).Assembly)
 └── 过滤：options.AssemblyNamePrefixes.Add("MyApp")
 ```
 
@@ -228,7 +228,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 // 扫描入口程序集与已加载的非框架程序集
-builder.Services.AddEasyCoreDependency();
+builder.Services.EasyCoreDependency();
 
 var app = builder.Build();
 app.MapControllers();
@@ -253,9 +253,9 @@ public class HomeController(IUserService userService) : ControllerBase
 
 | 方法 | 说明 |
 |---|---|
-| `AddEasyCoreDependency()` | 默认扫描策略 |
-| `AddEasyCoreDependency(params Assembly[])` | 仅扫描指定程序集 |
-| `AddEasyCoreDependency(Action<DependencyRegistrationOptions>)` | 完整选项配置 |
+| `EasyCoreDependency()` | 默认扫描策略 |
+| `EasyCoreDependency(params Assembly[])` | 仅扫描指定程序集 |
+| `EasyCoreDependency(Action<DependencyRegistrationOptions>)` | 完整选项配置 |
 
 ### 8.2 `DependencyRegistrationOptions`
 
@@ -266,7 +266,7 @@ public class HomeController(IUserService userService) : ControllerBase
 | `AddAssemblies(...)` | 链式追加程序集 |
 
 ```csharp
-builder.Services.AddEasyCoreDependency(options =>
+builder.Services.EasyCoreDependency(options =>
 {
     options.AddAssemblies(typeof(Program).Assembly);
     options.AssemblyNamePrefixes.Add("MyApp");
@@ -344,8 +344,8 @@ public class OrderService : IOrderReader, IOrderWriter
 
 | 场景 | 写法 |
 |---|---|
-| 默认 | `AddEasyCoreDependency()` |
-| 指定程序集 | `AddEasyCoreDependency(typeof(Program).Assembly)` |
+| 默认 | `EasyCoreDependency()` |
+| 指定程序集 | `EasyCoreDependency(typeof(Program).Assembly)` |
 | 前缀过滤 | `options.AssemblyNamePrefixes.Add("MyApp")` |
 
 **默认排除**：`System.` / `Microsoft.` / `mscorlib` / `netstandard` 以及动态程序集。
@@ -391,13 +391,14 @@ dotnet test EasyCore.Dependency.sln
 |---|---|
 | `EasyCore.Dependencie` | `EasyCore.Dependency` |
 | `IScopedDependencie` 等 | `IScopedDependency` 等 |
-| `services.EasyCoreDependencie()` | `services.AddEasyCoreDependency()` |
+| `services.EasyCoreDependencie()` | `services.EasyCoreDependency()` |
+| `services.AddEasyCoreDependency()` | `services.EasyCoreDependency()` |
 
 升级步骤：
 
 1. 更新 NuGet 包引用为 `EasyCore.Dependency`
 2. 全局替换命名空间与接口名
-3. 扩展方法改为 `AddEasyCoreDependency`
+3. 扩展方法改为 `EasyCoreDependency`
 
 ---
 
