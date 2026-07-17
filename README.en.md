@@ -84,7 +84,7 @@ EasyCore.Dependency/
 │       └── ServiceCollectionExtensions.cs
 ├── demo/Web.Dependency/                  # Runnable sample + Swagger
 ├── tests/EasyCore.Dependency.Tests/      # Unit tests
-└── docs/svg/                             # README diagrams
+└── docs/png/                             # README diagrams (PNG for NuGet)
 ```
 
 ---
@@ -93,11 +93,11 @@ EasyCore.Dependency/
 
 ### 2.1 🖼️ Component Diagram
 
-![architecture-en](https://raw.githubusercontent.com/RockyWang0521/EasyCore.Dependency/master/docs/svg/architecture-en.svg)
+![architecture-en](https://raw.githubusercontent.com/RockyWang0521/EasyCore.Dependency/master/docs/png/architecture-en.png)
 
 ### 2.2 🔁 Registration Flow
 
-![registration-flow-en](https://raw.githubusercontent.com/RockyWang0521/EasyCore.Dependency/master/docs/svg/registration-flow-en.svg)
+![registration-flow-en](https://raw.githubusercontent.com/RockyWang0521/EasyCore.Dependency/master/docs/png/registration-flow-en.png)
 
 ### 2.3 📜 Data Flow
 
@@ -356,7 +356,7 @@ Internally: register `OrderService` once, then forward `IOrderReader` / `IOrderW
 
 ## 13. 🧪 Demo & Tests
 
-![demo-topology-en](https://raw.githubusercontent.com/RockyWang0521/EasyCore.Dependency/master/docs/svg/demo-topology-en.svg)
+![demo-topology-en](https://raw.githubusercontent.com/RockyWang0521/EasyCore.Dependency/master/docs/png/demo-topology-en.png)
 
 | Project | Role | Command |
 |---|---|---|

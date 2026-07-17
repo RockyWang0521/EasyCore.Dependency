@@ -84,7 +84,7 @@ EasyCore.Dependency/
 │       └── ServiceCollectionExtensions.cs
 ├── demo/Web.Dependency/                  # 可运行示例 + Swagger
 ├── tests/EasyCore.Dependency.Tests/      # 单元测试
-└── docs/svg/                             # README 架构图
+└── docs/png/                             # README 架构图（PNG，NuGet 可显示）
 ```
 
 ---
@@ -93,11 +93,11 @@ EasyCore.Dependency/
 
 ### 2.1 🖼️ 组件关系图
 
-![architecture-cn](https://raw.githubusercontent.com/RockyWang0521/EasyCore.Dependency/master/docs/svg/architecture-cn.svg)
+![architecture-cn](https://raw.githubusercontent.com/RockyWang0521/EasyCore.Dependency/master/docs/png/architecture-cn.png)
 
 ### 2.2 🔁 注册流程
 
-![registration-flow-cn](https://raw.githubusercontent.com/RockyWang0521/EasyCore.Dependency/master/docs/svg/registration-flow-cn.svg)
+![registration-flow-cn](https://raw.githubusercontent.com/RockyWang0521/EasyCore.Dependency/master/docs/png/registration-flow-cn.png)
 
 ### 2.3 📜 数据流（文字版）
 
@@ -356,7 +356,7 @@ public class OrderService : IOrderReader, IOrderWriter
 
 ## 13. 🧪 Demo 与测试
 
-![demo-topology-cn](https://raw.githubusercontent.com/RockyWang0521/EasyCore.Dependency/master/docs/svg/demo-topology-cn.svg)
+![demo-topology-cn](https://raw.githubusercontent.com/RockyWang0521/EasyCore.Dependency/master/docs/png/demo-topology-cn.png)
 
 | 项目 | 角色 | 命令 |
 |---|---|---|
