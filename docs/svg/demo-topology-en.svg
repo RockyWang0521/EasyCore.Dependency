@@ -7,27 +7,22 @@
   </defs>
   <rect width="980" height="340" rx="16" fill="url(#bg)"/>
   <text x="40" y="40" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="18" font-weight="700">Demo Topology</text>
-  <text x="40" y="64" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Web.Dependency sample · Swagger · six registration scenarios</text>
-
+  <text x="40" y="64" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Web.Dependency sample | Swagger | six registration scenarios</text>
   <rect x="60" y="110" width="220" height="130" rx="12" fill="#243044" stroke="#3ecf8e" stroke-width="2"/>
   <text x="170" y="155" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="15" font-weight="700">EasyCore.Dependency</text>
   <text x="170" y="180" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">NuGet / project reference</text>
   <text x="170" y="202" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">AddEasyCoreDependency()</text>
-
   <rect x="360" y="100" width="260" height="150" rx="12" fill="#243044" stroke="#3d9cf0" stroke-width="2"/>
   <text x="490" y="140" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="15" font-weight="700">demo/Web.Dependency</text>
   <text x="490" y="168" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Interfaces: Scoped / Singleton / Transient</text>
   <text x="490" y="192" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Concrete: all three lifetimes</text>
-  <text x="490" y="216" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">DependencyController · Swagger</text>
-
+  <text x="490" y="216" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">DependencyController / Swagger</text>
   <rect x="700" y="110" width="220" height="130" rx="12" fill="#243044" stroke="#f0b429" stroke-width="2"/>
   <text x="810" y="155" text-anchor="middle" fill="#e8eef7" font-family="Segoe UI, Arial" font-size="15" font-weight="700">Unit Tests</text>
   <text x="810" y="180" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">EasyCore.Dependency.Tests</text>
-  <text x="810" y="202" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Lifetime · multi-iface · prefix</text>
-
+  <text x="810" y="202" text-anchor="middle" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Lifetime / multi-iface / prefix</text>
   <path d="M280 175 H360" stroke="#3d9cf0" stroke-width="2"/>
   <path d="M620 175 H700" stroke="#f0b429" stroke-width="2"/>
-
-  <text x="40" y="290" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Run: dotnet run --project demo/Web.Dependency · open Swagger · call /api/Dependency/*</text>
+  <text x="40" y="290" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Run: dotnet run --project demo/Web.Dependency | open Swagger | call /api/Dependency/*</text>
   <text x="40" y="315" fill="#8fa3bc" font-family="Segoe UI, Arial" font-size="12">Test: dotnet test EasyCore.Dependency.sln</text>
 </svg>
