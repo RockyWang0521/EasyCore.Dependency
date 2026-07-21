@@ -8,8 +8,8 @@ namespace EasyCore.Dependency
     public sealed class DependencyRegistrationOptions
     {
         /// <summary>
-        /// Assemblies to scan. When empty, entry assembly and already-loaded
-        /// non-framework assemblies are used.
+        /// Assemblies to scan. When empty, managed assemblies in the application base directory
+        /// are loaded and scanned (excluding framework assemblies).
         /// </summary>
         public IList<Assembly> Assemblies { get; } = new List<Assembly>();
 

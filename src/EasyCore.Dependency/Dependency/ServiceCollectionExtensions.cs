@@ -69,6 +69,8 @@ namespace EasyCore.Dependency
             }
             else
             {
+                LoadManagedAssembliesFromBaseDirectory();
+
                 var loaded = AppDomain.CurrentDomain.GetAssemblies()
                     .Where(assembly => !assembly.IsDynamic)
                     .Where(assembly => !IsFrameworkAssembly(assembly));
@@ -97,9 +99,54 @@ namespace EasyCore.Dependency
                 .ToArray();
         }
 
+        private static void LoadManagedAssembliesFromBaseDirectory()
+        {
+            var rootDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            if (!Directory.Exists(rootDirectory))
+            {
+                return;
+            }
+
+            foreach (var dllFile in Directory.GetFiles(rootDirectory, "*.dll", SearchOption.TopDirectoryOnly))
+            {
+                var fileName = Path.GetFileNameWithoutExtension(dllFile);
+                if (IsFrameworkAssemblyName(fileName))
+                {
+                    continue;
+                }
+
+                try
+                {
+                    var assemblyName = AssemblyName.GetAssemblyName(dllFile);
+                    if (IsFrameworkAssemblyName(assemblyName.Name))
+                    {
+                        continue;
+                    }
+
+                    Assembly.Load(assemblyName);
+                }
+                catch (BadImageFormatException)
+                {
+                    continue;
+                }
+                catch (FileNotFoundException)
+                {
+                    continue;
+                }
+                catch (FileLoadException)
+                {
+                    continue;
+                }
+            }
+        }
+
         private static bool IsFrameworkAssembly(Assembly assembly)
         {
-            var name = assembly.GetName().Name;
+            return IsFrameworkAssemblyName(assembly.GetName().Name);
+        }
+
+        private static bool IsFrameworkAssemblyName(string? name)
+        {
             if (string.IsNullOrEmpty(name))
             {
                 return true;
